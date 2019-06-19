@@ -1072,21 +1072,7 @@
   <sql id="Base_Column_List">
     t_id, t_name, t_age, t_sex, t_team_id, t_status
   </sql>
-  <select id="selectByExample" parameterType="com.shineyue.model.StudentExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    'true' as QUERYID,
-    <include refid="Base_Column_List" />
-    from t_student
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
