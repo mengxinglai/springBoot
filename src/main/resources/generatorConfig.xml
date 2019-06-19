@@ -4,10 +4,15 @@
 <generatorConfiguration>
 
 
-    <context id="sss">
-        <commentGenerator>
+    <context id="sss" targetRuntime="MyBatis3">
+        <commentGenerator type="com.shineyue.util.MyCommentGenerator">
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="true" />
+            <property name="suppressAllComments" value="false" />
+            <!-- 是否生成注释代时间戳-->
+            <!--<property name="suppressDate" value="true"/>-->
+            <!--<property name="author" value="Michael Chow"/>-->
+            <!--<property name="dateFormat" value="yyyy/MM/dd"/>-->
+            <property name="addRemarkComments" value="true"></property>
         </commentGenerator>
 
         <!--连接数据库-->
@@ -35,7 +40,17 @@
 
 
         <!--数据库表名配置-->
-        <table tableName="t_student" domainObjectName="Student" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true" ></table>
+        <table tableName="t_student"
+               domainObjectName="Student"
+               mapperName="StudentMapper"
+               modelType="flat"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
 
     </context>
 </generatorConfiguration>

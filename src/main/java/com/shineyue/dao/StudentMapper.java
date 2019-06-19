@@ -1,35 +1,44 @@
 package com.shineyue.dao;
 
 import com.shineyue.model.Student;
-import com.shineyue.model.StudentExample;
+
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-@Mapper
 public interface StudentMapper {
-    long countByExample(StudentExample example);
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
+    int deleteByPrimaryKey(String t_id);
 
-    int deleteByExample(StudentExample example);
-
-    int deleteByPrimaryKey(String tId);
-
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
     int insert(Student record);
 
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
     int insertSelective(Student record);
 
-    List<Student> selectByExample(StudentExample example);
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
+    Student selectByPrimaryKey(String t_id);
 
-    Student selectByPrimaryKey(String tId);
-
-    int updateByExampleSelective(@Param("record") Student record, @Param("example") StudentExample example);
-
-    int updateByExample(@Param("record") Student record, @Param("example") StudentExample example);
-
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
     int updateByPrimaryKeySelective(Student record);
 
+    /**
+     *
+     * @mbg.generated 2019-06-19 20:08:00
+     */
     int updateByPrimaryKey(Student record);
-
     List<Student> selectStudent();
 }
